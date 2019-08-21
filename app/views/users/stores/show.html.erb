@@ -1,2 +1,137 @@
-<h1>Users::Stores#show</h1>
-<p>Find me in app/views/users/stores/show.html.erb</p>
+<!-- お店詳細ページ -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8">
+			<h3 style="padding: 5px 10px 0px 0px; ; margin-top: 5px; border-top:groove 1px #ffbf7f;"><%= @store.store_name %>
+			<% if @store.favorited_by?(current_user) %>
+			  <span style="font-size: 16px;">
+			    <%= link_to users_store_favorite_path(@store), method: :delete do %>
+			      <i class="fas fa-heart" aria-hidden="true" style="color: red;　"></i>
+			    <% end %>
+			    <span style="font-size: 8px;">登録済み</span>
+			  </span>
+			<% else %>
+			  <span style="font-size: 16px;">
+			    <%= link_to users_store_favorite_path(@store), method: :post do %>
+			      <i class="fas fa-heart" aria-hidden="true" style="color: grey; "></i>
+			      <% end %>
+			  </span>
+			<% end %>
+			</h3>
+			<table width="100%" style="margin-bottom: 5px; border-bottom:groove 1px #ffbf7f;">
+				<tr>
+					<td style="float: right;">味</td>
+					<td id="star1-rate-<%= @store.id %>"></td>
+					<td style="float: right;">見た目</td>
+					<td id="star2-rate-<%= @store.id %>"></td>
+					<td style="float: right;">雰囲気</td>
+					<td id="star3-rate-<%= @store.id %>"></td>
+			</table>
+			<div><%= attachment_image_tag @store, :item_image, :fill,300,200, format: 'jpeg', fallback: "no_image.jpg",size:"300×200" %>
+			</div>
+			<h4>店舗情報</h4>
+			<table width="100%" style="border-top:groove 3px #ffbf7f; ">
+				<tr>
+					<th id="tabletitle">店舗名</th>
+					<td id="tabletext"><%= @store.store_name %></td>
+				</tr>
+				<tr>
+					<th id="tabletitle">ジャンル</th>
+					<td id="tabletext"><%= @store.genre %></td>
+				</tr>
+				<tr>
+					<th id="tabletitle">待ち時間</th>
+					<td id="tabletext"><%= @store.waittime %></td>
+				</tr>
+				<tr>
+					<th id="tabletitle">エリア</th>
+					<td id="tabletext"><%= @store.area %></td>
+				</tr>
+				<% if @store.station.empty? %>
+				<tr>
+					<th id="tabletitle">最寄り駅</th>
+					<td id="tabletext">未登録</td>
+				</tr>
+				<% else %>
+				<tr>
+					<th id="tabletitle">最寄り駅</th>
+					<td id="tabletext"><%= @store.station %></td>
+				</tr>
+				<% end %>
+				<% if @store.store_address.empty? %>
+				<tr>
+					<th id="tabletitle">住所</th>
+					<td id="tabletext">未登録</td>
+				</tr>
+				<% else %>
+				<tr>
+					<th id="tabletitle">住所</th>
+					<td id="tabletext"><%= @store.store_address %></td>
+				</tr>
+				<% end %>
+				<tr>
+					<th id="tabletitle">利用人数</th>
+					<td id="tabletext"><%= @store.people_number %></td>
+				</tr>
+				<% if @store.impression.empty? %>
+				<tr>
+					<th id="tabletitle">詳細・感想</th>
+					<td id="tabletext">未登録</td>
+				</tr>
+				<% else %>
+				<tr>
+					<th id="tabletitle">詳細・感想</th>
+					<td id="tabletext"><%= @store.impression %></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+		<div class="col-lg-4">
+			<% if @store.user == current_user %>
+			<p style="margin-top: 5px;">
+				<%= link_to '内容編集', edit_users_store_path, class: "btn btn-warning btn-block" %>
+			</p>
+			<p>
+			<%= link_to 'お店削除', users_store_path , method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-warning btn-block" %>
+			</p>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<!-- 味評価 -->
+<script>
+$('#star1-rate-<%= @store.id %>').raty({
+size: 40,
+starOff:  '<%= asset_path('star-off.png') %>',
+starOn : '<%= asset_path('star-on.png') %>',
+starHalf: '<%= asset_path('star-half.png') %>',
+half: true,
+readOnly: true,
+score: <%= @store.taste %>,
+});
+</script>
+<!-- 見た目評価 -->
+<script>
+$('#star2-rate-<%= @store.id %>').raty({
+size: 40,
+starOff:  '<%= asset_path('star-off.png') %>',
+starOn : '<%= asset_path('star-on.png') %>',
+starHalf: '<%= asset_path('star-half.png') %>',
+half: true,
+readOnly: true,
+score: <%= @store.appearance %>,
+});
+</script>
+<!-- 雰囲気評価 -->
+<script>
+$('#star3-rate-<%= @store.id %>').raty({
+size: 40,
+starOff:  '<%= asset_path('star-off.png') %>',
+starOn : '<%= asset_path('star-on.png') %>',
+starHalf: '<%= asset_path('star-half.png') %>',
+half: true,
+readOnly: true,
+score: <%= @store.atmosphere %>,
+});
+</script>

@@ -14,25 +14,26 @@ Rails.application.routes.draw do
   }
 
   #エンドユーザー側
+  namespace :users do
   #endusersコントローラー
   resources :endusers, only: [:show, :edit, :update, :destroy]
   #storesコントローラー
-  resources :stores, only: [:index, :show, :new, :edit, :create, :update, :destroy, ]
-
+  resources :stores, only: [:index, :show, :new, :edit, :create, :update, :destroy, ] do
+    #favoriteコントローラー
+    resource :favorite, only: [:create, :destroy]
+    end
+  end
 
   #管理者側
+  namespace :admins do
   #usersコントローラー
   resources :users, only: [:index, :show, :edit, :update, :destroy]
   #admin_storesコントローラー
   resources :admin_stores, only: [:index, :show, :new, :edit, :create, :update, :destroy, ]
-
+  end
 
   #トップ画面
   root 'tops#index'
-
-  #共通
-  #favoriteコントローラー
-  resources :favorite, only: [:create, :destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

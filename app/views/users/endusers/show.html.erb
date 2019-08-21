@@ -1,2 +1,136 @@
-<h1>Users::Endusers#show</h1>
-<p>Find me in app/views/users/endusers/show.html.erb</p>
+<!-- マイページ -->
+<div class="col mx-auto" style="width: 800px;">
+<!-- ピル部分 -->
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item pill-1" style="width: 50%; text-align: center;">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ホーム</a>
+  </li>
+  <li class="nav-item pill-2" style="width: 50%; text-align: center;">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">プロフィール</a>
+  </li>
+</ul>
+
+<!-- パネル部分 -->
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+<% @store.each do |store| %>
+			<div style="padding: 5px 5px 5px 5px; border-top:groove 3px #ffbf7f; border-bottom:groove 1px #ffbf7f; margin: 5px 0 5px 0 ;">
+				<strong><%= link_to store.store_name, users_store_path(store[:id]) %></strong>
+				<span style="font-size: 10px;"> <%= store.genre %> / <%= store.area %> <%= store.station %></span>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+		    			<%= link_to users_store_path(store[:id]) do %>
+							<%= attachment_image_tag store, :item_image, :fill, 187, 125, format:'jpeg', fallback: "no_image.jpg" %>
+						<% end %>
+					</div>
+					<div class="col-lg-2">
+					</div>
+					<div class="col-lg-7">
+							<!-- 味評価javascript -->
+						<div id="star1-rate-<%= store.id %>">味　　　</div>
+					          <script>
+					          $('#star1-rate-<%= store.id %>').raty({
+					            size: 36,
+					            starOff:  '<%= asset_path('star-off.png') %>',
+					            starOn : '<%= asset_path('star-on.png') %>',
+					            starHalf: '<%= asset_path('star-half.png') %>',
+					            half: true,
+					            readOnly: true,
+					            score: <%= store.taste %>,
+					          });
+					          </script>
+					          <!-- 見た目評価javascript -->
+						<div id="star2-rate-<%= store.id %>">見た目　</div>
+					          <script>
+					          $('#star2-rate-<%= store.id %>').raty({
+					            size: 36,
+					            starOff:  '<%= asset_path('star-off.png') %>',
+					            starOn : '<%= asset_path('star-on.png') %>',
+					            starHalf: '<%= asset_path('star-half.png') %>',
+					            half: true,
+					            readOnly: true,
+					            score: <%= store.appearance %>,
+					          });
+					          </script>
+					          <!-- 雰囲気評価javascript -->
+					    <div id="star3-rate-<%= store.id %>">雰囲気　</div>
+					          <script>
+					          $('#star3-rate-<%= store.id %>').raty({
+					            size: 36,
+					            starOff:  '<%= asset_path('star-off.png') %>',
+					            starOn : '<%= asset_path('star-on.png') %>',
+					            starHalf: '<%= asset_path('star-half.png') %>',
+					            half: true,
+					            readOnly: true,
+					            score: <%= store.atmosphere %>,
+					          });
+					          </script>
+					</div>
+				</div>
+			</div>
+		<% end %>
+  </div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+  	<% @favorites.each do |store| %>
+			<div style="padding: 5px 5px 5px 5px; border-top:groove 3px #ffbf7f; border-bottom:groove 1px #ffbf7f; margin: 5px 0 5px 0 ;">
+				<strong><%= link_to store.store_name, users_store_path(store[:id]) %></strong>
+				<span style="font-size: 10px;"> <%= store.genre %> / <%= store.area %> <%= store.station %></span>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+		    			<%= link_to users_store_path(store[:id]) do %>
+							<%= attachment_image_tag store, :item_image, :fill, 187, 125, format:'jpeg', fallback: "no_image.jpg" %>
+						<% end %>
+					</div>
+					<div class="col-lg-2">
+					</div>
+					<div class="col-lg-7">
+							<!-- 味評価javascript -->
+						<div id="star4-rate-<%= store.id %>">味　　　</div>
+					          <script>
+					          $('#star4-rate-<%= store.id %>').raty({
+					            size: 36,
+					            starOff:  '<%= asset_path('star-off.png') %>',
+					            starOn : '<%= asset_path('star-on.png') %>',
+					            starHalf: '<%= asset_path('star-half.png') %>',
+					            half: true,
+					            readOnly: true,
+					            score: <%= store.taste %>,
+					          });
+					          </script>
+					          <!-- 見た目評価javascript -->
+						<div id="star5-rate-<%= store.id %>">見た目　</div>
+					          <script>
+					          $('#star5-rate-<%= store.id %>').raty({
+					            size: 36,
+					            starOff:  '<%= asset_path('star-off.png') %>',
+					            starOn : '<%= asset_path('star-on.png') %>',
+					            starHalf: '<%= asset_path('star-half.png') %>',
+					            half: true,
+					            readOnly: true,
+					            score: <%= store.appearance %>,
+					          });
+					          </script>
+					          <!-- 雰囲気評価javascript -->
+					    <div id="star6-rate-<%= store.id %>">雰囲気　</div>
+					          <script>
+					          $('#star6-rate-<%= store.id %>').raty({
+					            size: 36,
+					            starOff:  '<%= asset_path('star-off.png') %>',
+					            starOn : '<%= asset_path('star-on.png') %>',
+					            starHalf: '<%= asset_path('star-half.png') %>',
+					            half: true,
+					            readOnly: true,
+					            score: <%= store.atmosphere %>,
+					          });
+					          </script>
+					</div>
+				</div>
+			</div>
+		<% end %>
+  </div>
+</div>
+</div>

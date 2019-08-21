@@ -1,10 +1,31 @@
 <!-- top画面 -->
+<!-- スライドショー -->
 <div id="container">
         <div id="theTarget">
-            <div style="background-image: url(img/test1.jpg)"></div>
-            <div style="background-image: url(img/test2.jpg)"></div>
-            <div style="background-image: url(img/test3.jpg)"></div>
-            <div style="background-image: url(img/test4.jpg)"></div>
-            <div style="background-image: url(img/test5.jpg)"></div>
+            <div style="background-image: url(/assets/images/test1.jpg)"></div>
+            <div style="background-image: url(/assets/images/test2.jpg)"></div>
+            <div style="background-image: url(/assets/images/test3.jpg)"></div>
+            <div style="background-image: url(/assets/images/test4.jpg)"></div>
+            <div style="background-image: url(/assets/images/test5.jpg)"></div>
         </div>
+</div>
+<!-- サイト紹介 -->
+<h1 style="text-align: center; margin-top: 30px;">ごちmemoへようこそ</h1>
+<div id="topbox">
+	ごちmemoは皆様が訪れた飲食店を思い出として残したり、共有することのできるグルメサイトです。末ログインでも上部の店舗一覧及び下記の使い方１のお店を探すからお店を探すことができます。
+</div>
+<div class="col mx-auto" style="text-align: center; border: solid #ffbf7f;border-radius: 20px; margin-top: 10px; width: 600px;">
+  <h2>使い方１　お店探し</h2>
+  <div>ジャンルやエリアからお店を探すことができます。お店に訪れた方が店舗登録をするので他では見つからない穴場のお店が見つかるかもしれません。
+  </div>
+  <div style="text-align: right; padding: 5px 5px 5px 5px;"><%= link_to 'お店を探す', users_stores_path, class: 'btn btn-warning' %>
+  </div>
+</div>
+<div class="col mx-auto" style="text-align: center; border: solid #ffff38;border-radius: 20px; margin-top: 10px; width: 600px;">
+  <h2>使い方２　ログインしてお店登録</h2>
+  <div>ログインすることで自分が訪れたお店を登録していつでも確認することができます。また、お店を行ってみたいに登録しておくこともできます。ログインして日々の食事を思い出に残しませんか？
+  </div>
+  <div style="text-align: right; padding: 5px 5px 5px 5px;">すでに登録してるかた<%= link_to 'ログイン', new_user_session_path, class: 'btn btn-warning' %><br><br>
+      	  登録していないかた<%= link_to '新規登録', new_user_registration_path, class: 'btn btn-warning' %>
+  </div>
 </div>

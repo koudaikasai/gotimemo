@@ -1,2 +1,113 @@
-<h1>Users::Stores#new</h1>
-<p>Find me in app/views/users/stores/new.html.erb</p>
+<!-- 店舗登録ページ -->
+<div class="col mx-auto" style="width: 500px;">
+      <div style="text-align: center; border: solid #ffbf7f;border-radius: 20px;   margin-top: 10px;">
+        <h2>店舗登録</h2>
+        <%= form_for [:users, @store] do |s| %>
+        <!-- エラー文 -->
+        <% if @store.errors.any? %>
+        <div id="error_explanation" style="color: red;">
+         	<h3>必須項目を入力してください</h3>
+        </div>
+        <% end %>
+        <!-- 登録内容 -->
+        <table align="center">
+        	<tr>
+        		<td style="font-size: 5px;"><span id="font_red">*</span>は必須項目です。</td>
+        		<td style="padding: 5px 10px 5px 10px;"></td>
+        	</tr>
+        	<tr>
+        		<td style="padding: 5px 10px 5px 10px;"><span id="font_red">*</span>店舗名</td>
+        		<td style="padding: 5px 10px 5px 10px;"><%= s.text_field :store_name %></td>
+        	</tr>
+        	<tr>
+        		<td style="padding: 5px 10px 5px 10px;">店舗、料理写真</td>
+        		<td style="padding: 5px 10px 5px 10px;"><%= s.attachment_field :item_image, multiple: true, direct: true, presigned: true %> </td>
+        	</tr>
+        	<tr>
+        		<td style="padding: 5px 10px 5px 10px;"><span id="font_red">*</span>ジャンル</td>
+        		<td style="padding: 5px 10px 5px 10px;"><%= s.select :genre, Store.genres.keys, {}, class: "select-default" %></td>
+        	</tr>
+            <tr>
+                <td style="padding: 5px 10px 5px 10px;"><span id="font_red">*</span>価格(使用金額)</td>
+                <td style="padding: 5px 10px 5px 10px;"><%= s.select :price, Store.prices.keys, {}, class: "select-default" %></td>
+            </tr>
+        	<tr>
+        		<td style="padding: 5px 10px 5px 10px;"><span id="font_red">*</span>待ち時間</td>
+        		<td style="padding: 5px 10px 5px 10px;"><%= s.select :waittime, Store.waittimes.keys, {}, class: "select-default" %></td>
+        	</tr>
+            <tr>
+                <td style="padding: 5px 10px 5px 10px;"><span id="font_red">*</span>味</td>
+        	    <td id="star1"><%= s.hidden_field :taste, id: :review_star %></td>
+        	</tr>
+            <tr>
+                <td style="padding: 5px 10px 5px 10px;"><span id="font_red">*</span>見た目</td>
+                <td id="star2"><%= s.hidden_field :appearance, id: :review_star %></td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 10px 5px 10px;"><span id="font_red">*</span>店の雰囲気</td>
+                <td id="star3"><%= s.hidden_field :atmosphere, id: :review_star %></td>
+            </tr>
+        	<tr>
+        		<td style="padding: 5px 10px 5px 10px;"><span id="font_red">*</span>公開情報</td>
+        		<td style="padding: 5px 10px 5px 10px;"><%= s.select :release, Store.releases.keys, {}, class: "select-default" %></td>
+        	</tr>
+        	<tr>
+        		<td style="padding: 5px 10px 5px 10px;"><span id="font_red">*</span>エリア(都道府県)</td>
+        		<td style="padding: 5px 10px 5px 10px;"><%= s.select :area, Store.areas.keys, {}, class: "select-default" %></td>
+        	</tr>
+        	<tr>
+        		<td style="padding: 5px 10px 5px 10px;">最寄り駅</td>
+        		<td style="padding: 5px 10px 5px 10px;"><%= s.text_field :station %></td>
+        	</tr>
+        	<tr>
+        		<td style="padding: 5px 10px 5px 10px;"><span id="font_red">*</span>利用人数</td>
+        		<td style="padding: 5px 10px 5px 10px;"><%= s.select :people_number, Store.people_numbers.keys, {}, class: "select-default" %></td>
+        	</tr>
+        	<tr>
+        		<td style="padding: 5px 10px 5px 10px;">住所</td>
+        		<td style="padding: 5px 10px 5px 10px;"><%= s.text_area :store_address %></td>
+        	</tr>
+        	<tr>
+        		<td style="padding: 5px 10px 5px 10px;">詳細・感想</td>
+        		<td style="padding: 5px 10px 5px 10px;"><%= s.text_area :impression %></td>
+        	</tr>
+        </table>
+        <div style="margin-bottom: 5px;">
+        	<%= s.submit "お店登録", class: 'btn btn-warning'%>
+        </div>
+        <% end %>
+      </div>
+</div>
+<!-- 味評価javascript -->
+<script>
+$('#star1').raty({
+size     : 36,
+starOff:  '<%= asset_path('star-off.png') %>',
+starOn : '<%= asset_path('star-on.png') %>',
+starHalf: '<%= asset_path('star-half.png') %>',
+scoreName: 'store[taste]',
+half: true,
+});
+</script>
+<!-- 見た目評価javascript -->
+<script>
+$('#star2').raty({
+size     : 36,
+starOff:  '<%= asset_path('star-off.png') %>',
+starOn : '<%= asset_path('star-on.png') %>',
+starHalf: '<%= asset_path('star-half.png') %>',
+scoreName: 'store[appearance]',
+half: true,
+});
+</script>
+<!-- 雰囲気評価javascript -->
+<script>
+$('#star3').raty({
+size     : 36,
+starOff:  '<%= asset_path('star-off.png') %>',
+starOn : '<%= asset_path('star-on.png') %>',
+starHalf: '<%= asset_path('star-half.png') %>',
+scoreName: 'store[atmosphere]',
+half: true,
+});
+</script>

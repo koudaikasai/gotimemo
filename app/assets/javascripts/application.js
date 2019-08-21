@@ -11,10 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.raty
 //= require rails-ujs
 //= require activestorage
 //= require bootstrap-sprockets
 //= require_tree ../../../vendor/assets/javascripts/.
+
 
 //= require_tree .
 $(function(){

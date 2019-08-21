@@ -14,6 +14,26 @@
  *= require_tree ../../../vendor/assets/stylesheets/.
  *= require_self
  */
-  #container{
- 	height: 500px;
-  }
+
+  @import "bootstrap";
+
+
+/* not active */
+.nav-pills .pill-1 .nav-link:not(.active) {
+    background-color: #ffffe0;
+    color: black;
+}
+
+.nav-pills .pill-2 .nav-link:not(.active) {
+    background-color: #ffffe0;
+    color: black;
+}
+
+/* active (faded) */
+.nav-pills .pill-1 .nav-link {
+    background-color: #ffbf7f;
+}
+
+.nav-pills .pill-2 .nav-link {
+    background-color: #ffbf7f;
+}

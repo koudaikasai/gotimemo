@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gotimemo</title>
+    <title>ごちmemo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header style="border-bottom: groove 5px #ffbf7f; border-top:groove 5px #ffbf7f; padding-top: 5px;">
+      <div class="container">
+        <div class="row">
+<!-- タイトルロゴ -->
+          <div class="col-lg-3">
+            <%= link_to root_path do %>
+            <%= image_tag '/assets/gotimemo.png',size: "200x100"   %>
+            <% end %>
+          </div>
+<!-- ユーザー側の表記 -->
+          <div class="col-lg-9" style="text-align: right;">
+          <% if user_signed_in? %>
+            <%= "ユーザー名：" %>
+            <%= link_to edit_users_enduser_path(current_user.id) do %>
+            <%= current_user.nickname %>
+              <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> |
+            <% end %>
+            <%= link_to 'マイページ', users_enduser_path(current_user.id) %> |
+            <%= link_to '店舗一覧', users_stores_path %> |
+            <%= link_to '店舗登録', new_users_store_path %> |
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<!-- 管理者側の表記 -->
+          <% elsif admin_signed_in? %>
+            <%= "管理者" %> |
+            <%= link_to 'ユーザー一覧', admins_users_path %> |
+            <%= link_to '店舗一覧', admins_admin_stores_path %> |
+            <%= link_to '店舗登録', new_admins_admin_store_path %> |
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<!-- 未ログインの表記 -->
+          <% else %>
+            <%= link_to "新規登録", new_user_registration_path %> |
+            <%= link_to "ログイン", new_user_session_path %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </header>
+      <%= yield %>
+    <footer style="border-top: groove 5px #ffbf7f; margin-top: 10px;">
+      <p style="text-align: center;">@gotimemo</p>
+      <p style="text-align: left;"><%= link_to "管理者の方はこちら", new_admin_session_path %>
+    </footer>
   </body>
 </html>

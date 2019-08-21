@@ -1,5 +1,4 @@
 class Admins::UsersController < ApplicationController
-  before_action :if_not_admin
   def index
   end
 
