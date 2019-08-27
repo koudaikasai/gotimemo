@@ -2,30 +2,53 @@
 <!-- スライドショー -->
 <div id="container">
         <div id="theTarget">
-            <div style="background-image: url(/assets/images/test1.jpg)"></div>
-            <div style="background-image: url(/assets/images/test2.jpg)"></div>
-            <div style="background-image: url(/assets/images/test3.jpg)"></div>
-            <div style="background-image: url(/assets/images/test4.jpg)"></div>
-            <div style="background-image: url(/assets/images/test5.jpg)"></div>
+            <div style="text-align: center; background-image: url(/images/slide1.jpg)">
+              <h2 id="myfade" style="text-align: center; margin-top: 60px; font-size: 80px;">ごちmemo
+              </h2>
+              <h2 id="myfade2" style="text-align: center; margin-top: 60px; font-size: 35px;">みんなで作るグルメサイト
+              </h2>
+              <div id="myfade3" style="text-align: center; margin-top: 30px; font-size: 25px;">
+                ごちmemoは皆様が訪れた飲食店を<br>
+                思い出として残したり、<br>共有することのできるグルメサイトです。
+              </div>
+              <div id="myfade4" style="text-align: center; margin-top: 60px; font-size: 25px;">
+                さっそく使ってみる！<br><br>
+                  すでに登録してるかた<%= link_to 'ログイン', new_user_session_path, class: 'btn btn-light' %>
+                  登録していないかた<%= link_to '新規登録', new_user_registration_path, class: 'btn btn-light' %>
+              </div>
+            </div>
+            <div style="text-align: center; background-image: url(/images/slide2.jpg)">
+              <div style="position: absolute; top: 150px; left:150px; font-size: 35px; width: 300px; height:100px; background: rgba(255,255,204,0.8); border-radius: 30px;">食の思い出<br>
+                作りませんか？
+              </div>
+            </div>
         </div>
 </div>
 <!-- サイト紹介 -->
-<h1 style="text-align: center; margin-top: 30px;">ごちmemoへようこそ</h1>
-<div id="topbox">
-	ごちmemoは皆様が訪れた飲食店を思い出として残したり、共有することのできるグルメサイトです。末ログインでも上部の店舗一覧及び下記の使い方１のお店を探すからお店を探すことができます。
-</div>
-<div class="col mx-auto" style="text-align: center; border: solid #ffbf7f;border-radius: 20px; margin-top: 10px; width: 600px;">
-  <h2>使い方１　お店探し</h2>
-  <div>ジャンルやエリアからお店を探すことができます。お店に訪れた方が店舗登録をするので他では見つからない穴場のお店が見つかるかもしれません。
+<div class="col mx-auto" style="text-align: center; background-color:#ffa54c;">
+  <h2 style="padding-top: 10px;">サイトの使い方</h2>
+  <div class="topbox">
+    <i class="fas fa-search" style="position: relative;top: 50px; left: 20px; font-size: 40px;"></i>
+    <div style="background-image:url(/images/food1-2.jpg); width:50px; height: 40px; background-position: center center; position: relative;top: -10px; left: 80px;"></div>
+    <div style="background-image:url(/images/food2.jpg); width:50px; height: 40px; background-position: center center; position: relative;top: -50px; left: 135px;"></div>
+    <div style="background-image:url(/images/food4.jpg); width:50px; height: 40px; background-position: center center; position: relative;top: -50px; left: 80px;"></div>
+    <div style="background-image:url(/images/food6.jpg); width:50px; height: 40px; background-position: center center; position: relative;top: -90px; left: 135px;"></div>
+    <div style="padding: 5px 5px 5px 5px; position: relative;top: -80px;">店舗検索<br>
+         ジャンルやエリアから詳細に店舗を検索できます。ユーザーが直接行ったお店が登録されているためここでしか見つからない店舗が見つかるかもしれません。
+    </div>
   </div>
-  <div style="text-align: right; padding: 5px 5px 5px 5px;"><%= link_to 'お店を探す', users_stores_path, class: 'btn btn-warning' %>
+  <div class="topbox" style="position: relative;top: -80px;">
+    <i class="fas fa-heart" style="color: red; position: relative;top: 50px; left: 20px; font-size: 40px;"></i>
+    <div style="background-image:url(/images/food1-1.jpg); width:100px; height: 80px; background-position: center center; position: relative;top: -10px; left: 80px;"></div>
+    <div style="padding: 5px 5px 5px 5px;">memo登録<br>
+         気になったお店にある♡をチェックすることでmemo登録をしマイページからいつでも気になったお店をチェックすることができます。<br><br>
+    </div>
   </div>
-</div>
-<div class="col mx-auto" style="text-align: center; border: solid #ffff38;border-radius: 20px; margin-top: 10px; width: 600px;">
-  <h2>使い方２　ログインしてお店登録</h2>
-  <div>ログインすることで自分が訪れたお店を登録していつでも確認することができます。また、お店を行ってみたいに登録しておくこともできます。ログインして日々の食事を思い出に残しませんか？
-  </div>
-  <div style="text-align: right; padding: 5px 5px 5px 5px;">すでに登録してるかた<%= link_to 'ログイン', new_user_session_path, class: 'btn btn-warning' %><br><br>
-      	  登録していないかた<%= link_to '新規登録', new_user_registration_path, class: 'btn btn-warning' %>
+  <div class="topbox" style="position: relative;top: -80px;">
+    <i class="far fa-clipboard" style="position: relative;top: 50px; left: 20px; font-size: 40px;"></i>
+    <div style="background-image:url(/images/food5.jpg); width:100px; height: 80px; background-position: center center; position: relative;top: -10px; left: 80px;"></div>
+    <div style="padding: 5px 5px 5px 5px;">店舗登録<br>
+         自分で食事した店舗を登録することができます。公開、非公開を設定することでみんなに共有、自分だけのお気に入りを作成することができます。<br><br>
+    </div>
   </div>
 </div>

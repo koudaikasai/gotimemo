@@ -17,6 +17,8 @@ class CreateStores < ActiveRecord::Migration[5.2]
       t.float :taste
       t.float :appearance
       t.float :atmosphere
+      t.float :latitude, :default => '36'
+      t.float :longitude, :default => '140'
 
       t.timestamps
     end

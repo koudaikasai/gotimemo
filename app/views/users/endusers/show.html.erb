@@ -1,12 +1,16 @@
 <!-- マイページ -->
 <div class="col mx-auto" style="width: 800px;">
+    <p><%= attachment_image_tag @enduser, :user_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image2.jpg" %><%= @enduser.nickname %></p>
+	<% if @enduser.id == current_user.id %>
+        <p><%= link_to "プロフィール編集",edit_users_enduser_path(current_user.id), class: "pull-right" %></p>
+    <% end %>
 <!-- ピル部分 -->
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item pill-1" style="width: 50%; text-align: center;">
-    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ホーム</a>
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">登録店舗</a>
   </li>
   <li class="nav-item pill-2" style="width: 50%; text-align: center;">
-    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">プロフィール</a>
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">行ってみたい店舗</a>
   </li>
 </ul>
 
@@ -21,8 +25,22 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3">
+		    			<% if store.store_images.present? %>
 		    			<%= link_to users_store_path(store[:id]) do %>
-							<%= attachment_image_tag store, :item_image, :fill, 187, 125, format:'jpeg', fallback: "no_image.jpg" %>
+						    <div class="swiper-container main">
+								<div class="swiper-wrapper">
+									<% store.store_images.each do |image| %>
+									<div class="swiper-slide">
+								 	   <%= attachment_image_tag image, :item_image, :fill, 187, 125 %>
+									</div>
+								  <% end %>
+								</div>
+							</div>
+						<% end %>
+						<% else %>
+						<%= link_to users_store_path(store[:id]) do %>
+				    		<%= image_tag 'no_image.jpg', size: '187x125' %>
+				    	<% end %>
 						<% end %>
 					</div>
 					<div class="col-lg-2">
@@ -67,6 +85,7 @@
 					            score: <%= store.atmosphere %>,
 					          });
 					          </script>
+					        <div>値段　　<span style="font-size: 14px;"><%= store.price %></span></div>
 					</div>
 				</div>
 			</div>
@@ -74,6 +93,7 @@
   </div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
   	<% @favorites.each do |store| %>
+  	<% if store.user == current_user %>
 			<div style="padding: 5px 5px 5px 5px; border-top:groove 3px #ffbf7f; border-bottom:groove 1px #ffbf7f; margin: 5px 0 5px 0 ;">
 				<strong><%= link_to store.store_name, users_store_path(store[:id]) %></strong>
 				<span style="font-size: 10px;"> <%= store.genre %> / <%= store.area %> <%= store.station %></span>
@@ -81,8 +101,22 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3">
+		    			<% if store.store_images.present? %>
 		    			<%= link_to users_store_path(store[:id]) do %>
-							<%= attachment_image_tag store, :item_image, :fill, 187, 125, format:'jpeg', fallback: "no_image.jpg" %>
+						    <div class="swiper-container main">
+								<div class="swiper-wrapper">
+									<% store.store_images.each do |image| %>
+									<div class="swiper-slide">
+								 	   <%= attachment_image_tag image, :item_image, :fill, 187, 125 %>
+									</div>
+								  <% end %>
+								</div>
+							</div>
+						<% end %>
+						<% else %>
+						<%= link_to users_store_path(store[:id]) do %>
+				    		<%= image_tag 'no_image.jpg', size: '187x125' %>
+				    	<% end %>
 						<% end %>
 					</div>
 					<div class="col-lg-2">
@@ -127,10 +161,26 @@
 					            score: <%= store.atmosphere %>,
 					          });
 					          </script>
+					        <div>値段　　<span style="font-size: 14px;"><%= store.price %></span></div>
 					</div>
 				</div>
 			</div>
 		<% end %>
+		<% end %>
+		</div>
   </div>
 </div>
 </div>
+
+<!-- 写真表記 -->
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var swiperMain = new Swiper ('.slide .main', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 10,
+  })
+
+</script>

@@ -1,2 +1,22 @@
-<h1>Admins::Users#index</h1>
-<p>Find me in app/views/admins/users/index.html.erb</p>
+<!-- 管理者ユーザー一覧 -->
+<div style="text-align: center;">
+			<h2>ユーザー一覧</h2><br>
+			<table align="center" border="">
+					<tr>
+						<th>サイト内名</th>
+						<th>ユーザ名</th>
+						<th>メールアドレス</th>
+						<th>show</th>
+					</tr>
+					<% @endusers.each do |enduser| %>
+					<tr>
+						<td width="200"><%= enduser.nickname %></td>
+						<td width="200"><%= enduser.first_name + enduser.last_name %></td>
+						<td width="400"><%= enduser.email %></td>
+						<td width="100">
+							<%= link_to "詳細", admins_user_path(enduser.id), class:"btn btn-default" %>
+					  	</td>
+					</tr>
+					<% end %>
+			</table>
+</div>

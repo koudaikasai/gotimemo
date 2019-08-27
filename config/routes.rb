@@ -27,9 +27,9 @@ Rails.application.routes.draw do
   #管理者側
   namespace :admins do
   #usersコントローラー
-  resources :users, only: [:index, :show, :edit, :update, :destroy]
+  resources :users, only: [:index, :show, :destroy]
   #admin_storesコントローラー
-  resources :admin_stores, only: [:index, :show, :new, :edit, :create, :update, :destroy, ]
+  resources :admin_stores, only: [:index, :show, :destroy]
   end
 
   #トップ画面

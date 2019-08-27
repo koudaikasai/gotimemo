@@ -14,4 +14,13 @@ class User < ApplicationRecord
   validates :first_name_kana, presence: true
   validates :last_name_kana, presence: true
 
+  def self.search(search)
+    if search
+      where(['nickname LIKE ?', "%#{search}%"])
+    else
+      all
+    end
+  end
+
+
 end

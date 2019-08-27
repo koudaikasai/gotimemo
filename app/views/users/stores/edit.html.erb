@@ -1,6 +1,7 @@
 <!-- 店舗編集ページページ -->
-<div class="col mx-auto" style="width: 500px;">
-      <div style="text-align: center; border: solid #ffbf7f;border-radius: 20px;   margin-top: 10px;">
+<div class="wrap">
+  <div id="store_new" class="col mx-auto" style="width: 500px;">
+      <div style="color: black; text-align: center; background-color: rgba(255,255,255,0.8); border: solid #ffbf7f;border-radius: 20px; margin-top: 10px;">
         <h2>店舗編集</h2>
         <%= form_for [:users, @store] do |s| %>
         <!-- エラー文 -->
@@ -21,12 +22,16 @@
         	</tr>
         	<tr>
         		<td style="padding: 5px 10px 5px 10px;">店舗、料理写真</td>
-        		<td style="padding: 5px 10px 5px 10px;"><%= s.attachment_field :item_image, multiple: true, direct: true, presigned: true %> </td>
+        		<td style="padding: 5px 10px 5px 10px;"><%= s.attachment_field :store_images_item_images, multiple: true %> </td>
         	</tr>
         	<tr>
         		<td style="padding: 5px 10px 5px 10px;"><span id="font_red">*</span>ジャンル</td>
         		<td style="padding: 5px 10px 5px 10px;"><%= s.select :genre, Store.genres.keys, {}, class: "select-default" %></td>
         	</tr>
+            <tr>
+                <td style="padding: 5px 10px 5px 10px;"><span id="font_red">*</span>価格(使用金額)</td>
+                <td style="padding: 5px 10px 5px 10px;"><%= s.select :price, Store.prices.keys, {}, class: "select-default" %></td>
+            </tr>
         	<tr>
         		<td style="padding: 5px 10px 5px 10px;"><span id="font_red">*</span>待ち時間</td>
         		<td style="padding: 5px 10px 5px 10px;"><%= s.select :waittime, Store.waittimes.keys, {}, class: "select-default" %></td>
@@ -61,7 +66,7 @@
         	</tr>
         	<tr>
         		<td style="padding: 5px 10px 5px 10px;">住所</td>
-        		<td style="padding: 5px 10px 5px 10px;"><%= s.text_area :store_address %></td>
+        		<td style="padding: 5px 10px 5px 10px;"><%= s.text_area :store_address, placeholder: "詳しく書くと詳細にマップが表示されます" %></td>
         	</tr>
         	<tr>
         		<td style="padding: 5px 10px 5px 10px;">詳細・感想</td>
@@ -73,6 +78,12 @@
         </div>
         <% end %>
       </div>
+</div>
+  <div class="slideshow">
+    <div class="item" style="background-image: url(/images/edit.jpg)"></div>
+    <div class="item" style="background-image: url(/images/edit2.jpg)"></div>
+    <div class="item" style="background-image: url(/images/edit3.jpg)"></div>
+  </div>
 </div>
 <!-- 味評価javascript -->
 <script>

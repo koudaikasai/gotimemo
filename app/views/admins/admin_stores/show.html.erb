@@ -1,2 +1,203 @@
-<h1>Admins::AdminStores#show</h1>
-<p>Find me in app/views/admins/admin_stores/show.html.erb</p>
+<!-- お店詳細ページ -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8">
+			<h3 style="padding: 5px 10px 0px 0px; ; margin-top: 5px; border-top:groove 1px #ffbf7f;"><%= @store.store_name %>
+			</h3>
+			<table width="100%" style="margin-bottom: 5px; border-bottom:groove 1px #ffbf7f;">
+				<tr>
+					<td style="float: right;">味</td>
+					<td id="star1-rate-<%= @store.id %>"></td>
+					<td style="float: right;">見た目</td>
+					<td id="star2-rate-<%= @store.id %>"></td>
+					<td style="float: right;">雰囲気</td>
+					<td id="star3-rate-<%= @store.id %>"></td>
+			</table>
+			<div class="slide" style="margin: 0 auto; text-align: center;">
+				<% if @store.store_images.present? %>
+				<div class="swiper-container main">
+					<div class="swiper-wrapper">
+						<% @store.store_images.each do |image| %>
+						<div class="swiper-slide">
+					 	   <%= attachment_image_tag image, :item_image, :fill, 500, 300 %>
+						</div>
+					  <% end %>
+					</div>
+				</div>
+				<div class="swiper-pagination" ></div>
+				<div class="swiper-container thumbnail" style="background-color: #ffffe0;">
+					<div class="swiper-wrapper">
+						<% @store.store_images.each do |image| %>
+						<div class="swiper-slide">
+					 	   <%= attachment_image_tag image, :item_image, :fill, 150, 80 %>
+						</div>
+					  <% end %>
+					</div>
+				</div>
+				  <% else %>
+				    <%= image_tag 'no_image.jpg', size: '500x300' %>
+				<% end %>
+			</div>
+			<h4>店舗情報</h4>
+			<table width="100%" style="border-top:groove 3px #ffbf7f; ">
+				<tr>
+					<th id="tabletitle">店舗名</th>
+					<td id="tabletext"><%= @store.store_name %></td>
+				</tr>
+				<tr>
+					<th id="tabletitle">ジャンル</th>
+					<td id="tabletext"><%= @store.genre %></td>
+				</tr>
+				<tr>
+					<th id="tabletitle">価格</th>
+					<td id="tabletext"><%= @store.price %></td>
+				</tr>
+				<tr>
+					<th id="tabletitle">待ち時間</th>
+					<td id="tabletext"><%= @store.waittime %></td>
+				</tr>
+				<tr>
+					<th id="tabletitle">エリア</th>
+					<td id="tabletext"><%= @store.area %></td>
+				</tr>
+				<% if @store.station.empty? %>
+				<tr>
+					<th id="tabletitle">最寄り駅</th>
+					<td id="tabletext">未登録</td>
+				</tr>
+				<% else %>
+				<tr>
+					<th id="tabletitle">最寄り駅</th>
+					<td id="tabletext"><%= @store.station %></td>
+				</tr>
+				<% end %>
+				<% if @store.store_address.empty? %>
+				<tr>
+					<th id="tabletitle">住所</th>
+					<td id="tabletext">未登録</td>
+				</tr>
+				<% else %>
+				<tr>
+					<th id="tabletitle">住所</th>
+					<td id="tabletext"><%= @store.store_address %></td>
+				</tr>
+				<% end %>
+				<tr>
+					<th id="tabletitle">利用人数</th>
+					<td id="tabletext"><%= @store.people_number %></td>
+				</tr>
+				<% if @store.impression.empty? %>
+				<tr>
+					<th id="tabletitle">詳細・感想</th>
+					<td id="tabletext">未登録</td>
+				</tr>
+				<% else %>
+				<tr>
+					<th id="tabletitle">詳細・感想</th>
+					<td id="tabletext"><%= @store.impression %></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+		<div class="col-lg-4">
+			<!-- マップ機能 -->
+			<div id="map"></div>
+			<script>
+			let map
+			let geocoder
+
+			function initMap(){
+
+			  var test = {lat: <%= @store.latitude %>, lng: <%= @store.longitude %>};
+
+			  var map = new google.maps.Map(document.getElementById('map'), {
+			  center: test,
+			  zoom: 16
+			  });
+
+			    var transitLayer = new google.maps.TransitLayer();
+			    transitLayer.setMap(map);
+
+			    var contentString = '住所：<%= @store.store_address %>';
+			    var infowindow = new google.maps.InfoWindow({
+			      content: contentString
+			    });
+
+			    var marker = new google.maps.Marker({
+			      position:test,
+			      map: map,
+			      title: contentString
+			    });
+
+			    marker.addListener('click', function() {
+			      infowindow.open(map, marker);
+			    });
+			  }
+
+			</script>
+			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAYMMRcT8tguqip4asNNbAk-txb_O6OJk&callback=initMap"></script>
+			<!-- /マップ機能 -->
+			<p style="margin-top: 10px;">
+			<%= link_to "店舗削除", admins_admin_store_path, method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-warning btn-block" %>
+			</p>
+		</div>
+	</div>
+</div>
+
+<!-- 味評価 -->
+<script>
+$('#star1-rate-<%= @store.id %>').raty({
+size: 40,
+starOff:  '<%= asset_path('star-off.png') %>',
+starOn : '<%= asset_path('star-on.png') %>',
+starHalf: '<%= asset_path('star-half.png') %>',
+half: true,
+readOnly: true,
+score: <%= @store.taste %>,
+});
+</script>
+<!-- 見た目評価 -->
+<script>
+$('#star2-rate-<%= @store.id %>').raty({
+size: 40,
+starOff:  '<%= asset_path('star-off.png') %>',
+starOn : '<%= asset_path('star-on.png') %>',
+starHalf: '<%= asset_path('star-half.png') %>',
+half: true,
+readOnly: true,
+score: <%= @store.appearance %>,
+});
+</script>
+<!-- 雰囲気評価 -->
+<script>
+$('#star3-rate-<%= @store.id %>').raty({
+size: 40,
+starOff:  '<%= asset_path('star-off.png') %>',
+starOn : '<%= asset_path('star-on.png') %>',
+starHalf: '<%= asset_path('star-half.png') %>',
+half: true,
+readOnly: true,
+score: <%= @store.atmosphere %>,
+});
+</script>
+<!-- スライドショー -->
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var swiperMain = new Swiper ('.slide .main', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 10,
+  })
+
+  var swiperThumb = new Swiper('.slide .thumbnail', {
+    spaceBetween: 10,
+    centeredSlides: true,
+    slidesPerView: 4,
+    slideToClickedSlide: true
+  });
+  swiperMain.controller.control = swiperThumb;
+  swiperThumb.controller.control = swiperMain;
+}, true)
+</script>

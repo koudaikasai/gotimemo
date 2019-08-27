@@ -1,7 +1,8 @@
 <!-- ユーザー編集ページ -->
-<div class="col mx-auto" style="width: 500px;">
-      <div style="text-align: center; border: solid#ffbf7f;border-radius: 20px; margin-top: 10px;">
-            <h2>新規登録</h2>
+<div class="wrap">
+  <div id="store_new" class="col mx-auto" style="width: 500px;">
+      <div style="color: black; text-align: center; background-color: rgba(255,255,255,0.8); border: solid #ffbf7f;border-radius: 20px; margin-top: 10px;">
+            <h2>プロフィール編集</h2>
             <%= form_for(@enduser, :url => {:controller => :endusers, :action => :update}) do |f| %>
             <div class="field">
             <p><strong>お名前(フリガナ)</strong></p>
@@ -16,6 +17,11 @@
             </div>
 
             <div class="field">
+              <p><strong>ユーザーイメージ</strong></p>
+              <%= f.attachment_field :user_image %>
+            </div>
+
+            <div class="field">
               <p><strong>ニックネーム</strong>(サイト内での表記)</p>
               <%= f.text_field :nickname, autofocus: true,placeholder: "例：ごち", autocomplete: "nickname" %>
             </div>
@@ -25,8 +31,14 @@
               <%= f.email_field :email, autofocus: true,placeholder: "例：gotimemo@mail.com", autocomplete: "email" %>
             </div>
             <div class="actions">
-              <%= f.submit "変更" %>
+              <%= f.submit "変更", class: 'btn btn-warning'%>
             </div>
           <% end %>
       </div>
+</div>
+  <div class="slideshow">
+    <div class="item" style="background-image: url(/images/edit.jpg)"></div>
+    <div class="item" style="background-image: url(/images/edit2.jpg)"></div>
+    <div class="item" style="background-image: url(/images/edit3.jpg)"></div>
+  </div>
 </div>

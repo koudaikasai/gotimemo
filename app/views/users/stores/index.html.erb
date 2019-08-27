@@ -1,7 +1,18 @@
 <!-- 店舗一覧ページ -->
 <div class="container">
 	<div class="row">
-		<div class="col-lg-4">
+		<div class="col-lg-4" style="margin-top: 5px; background-color: #ffffe0; height: 320px;　border-radius: 20px;">
+			<h3 style="text-align: center;">店舗検索</h3>
+			<%= search_form_for([:users,@search], method: :get) do |f| %>
+			  <P>店舗名　　<%= f.text_field :store_name_cont %></P>
+			  <P>ジャンル　<%= f.select :genre_eq, Store.genres, {}, class: "select-default" %></P>
+			  <P>エリア　　<%= f.select :area_eq, Store.areas, {}, class: "select-default" %></P>
+			  <P>値段　　　<%= f.select :price_eq, Store.prices, {}, class: "select-default" %></P>
+			  <p><%= f.submit '検索する', class: "btn btn-warning btn-block" %></p>
+			<% end %>
+			<%= search_form_for([:users,@search], method: :get) do |f| %>
+			<p><%= f.submit '検索リセット', class: "btn btn-warning btn-block" %></p>
+			<% end %>
 		</div>
 		<div class="col-lg-8">
 		<% @stores.each do |store| %>
@@ -12,12 +23,26 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3">
+					<div class="col-lg-4">
+						<% if store.store_images.present? %>
 		    			<%= link_to users_store_path(store[:id]) do %>
-							<%= attachment_image_tag store, :item_image, :fill, 187, 125, format:'jpeg', fallback: "no_image.jpg" %>
+						    <div class="swiper-container main">
+								<div class="swiper-wrapper">
+									<% store.store_images.each do |image| %>
+									<div class="swiper-slide">
+								 	   <%= attachment_image_tag image, :item_image, :fill, 187, 125 %>
+									</div>
+								  <% end %>
+								</div>
+							</div>
+						<% end %>
+						<% else %>
+						<%= link_to users_store_path(store[:id]) do %>
+				    		<%= image_tag 'no_image.jpg', size: '187x125' %>
+				    	<% end %>
 						<% end %>
 					</div>
-					<div class="col-lg-2">
+					<div class="col-lg-1">
 					</div>
 					<div class="col-lg-7">
 							<!-- 味評価javascript -->
@@ -59,12 +84,26 @@
 					            score: <%= store.atmosphere %>,
 					          });
 					          </script>
+					    <div>値段　　<span style="font-size: 14px;"><%= store.price %></span></div>
 					</div>
 				</div>
 			</div>
 		<% end %>
 		<% end %>
+		<div class="mx-auto" style="width: 450px; margin-top: 100px;"><%= paginate @stores, class: "paginate" %></div>
 		</div>
 	</div>
 </div>
 
+<!-- 写真表記 -->
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var swiperMain = new Swiper ('.slide .main', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 10,
+  })
+
+</script>

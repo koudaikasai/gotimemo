@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -24,22 +26,31 @@
 <!-- ユーザー側の表記 -->
           <div class="col-lg-9" style="text-align: right;">
           <% if user_signed_in? %>
-            <%= "ユーザー名：" %>
-            <%= link_to edit_users_enduser_path(current_user.id) do %>
-            <%= current_user.nickname %>
-              <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> |
+            <%= link_to edit_users_enduser_path(current_user.id) do  %>
+              <%= attachment_image_tag @enduser, :user_image, :fill, 40, 40, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image2.jpg", size:"50x50" %>
             <% end %>
             <%= link_to 'マイページ', users_enduser_path(current_user.id) %> |
             <%= link_to '店舗一覧', users_stores_path %> |
             <%= link_to '店舗登録', new_users_store_path %> |
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <%= form_tag users_stores_path, method: :get do %>
+            <div>簡易検索　 <%= text_field_tag :search, params[:search], placeholder: "店舗検索" %>
+              <button type="submit" class="btn btn-primary rounded-circle p-0" style=" width:2rem; height:2rem; background-color: orange; border: solid 1px orange;"><i class="fas fa-search"></i></button></div>
+              <% end %>
 <!-- 管理者側の表記 -->
           <% elsif admin_signed_in? %>
             <%= "管理者" %> |
             <%= link_to 'ユーザー一覧', admins_users_path %> |
             <%= link_to '店舗一覧', admins_admin_stores_path %> |
-            <%= link_to '店舗登録', new_admins_admin_store_path %> |
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <%= form_tag admins_admin_stores_path, method: :get do %>
+            <p><%= text_field_tag :search, params[:search], placeholder: "店舗検索" %>
+              <%= submit_tag '検索', :name => nil %>
+              <% end %>
+            <%= form_tag admins_users_path, method: :get do %>
+            <%= text_field_tag :search, params[:search2], placeholder: "サイト内名検索" %>
+              <%= submit_tag '検索', :name => nil %></p>
+              <% end %>
 <!-- 未ログインの表記 -->
           <% else %>
             <%= link_to "新規登録", new_user_registration_path %> |
@@ -54,5 +65,8 @@
       <p style="text-align: center;">@gotimemo</p>
       <p style="text-align: left;"><%= link_to "管理者の方はこちら", new_admin_session_path %>
     </footer>
+    <p id="pageTop"><a href="#">⇧</a></p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
   </body>
 </html>
+

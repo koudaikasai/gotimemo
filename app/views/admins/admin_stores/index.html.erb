@@ -1,2 +1,106 @@
-<h1>Admins::AdminStores#index</h1>
-<p>Find me in app/views/admins/admin_stores/index.html.erb</p>
+<!-- 管理者店舗一覧ページ -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4" style="margin-top: 5px; background-color: #ffffe0; height: 260px;　border-radius: 20px;">
+			<h3 style="text-align: center;">店舗検索</h3>
+			<%= search_form_for([:users,@search], method: :get) do |f| %>
+			  <P>店舗名　　<%= f.text_field :store_name_cont %></P>
+			  <P>ジャンル　<%= f.select :genre_cont, Store.genres, {}, class: "select-default" %></P>
+			  <P>エリア　　<%= f.select :area_cont, Store.areas, {}, class: "select-default" %></P>
+			  <P>値段　　　<%= f.select :price_cont, Store.prices, {}, class: "select-default" %></P>
+			  <%= f.submit '検索する', class: "btn btn-warning btn-block" %>
+			<% end %>
+		</div>
+		<div class="col-lg-8">
+		<% @stores.each do |store| %>
+		<% if store.release == "公開" %>
+			<div style="padding: 5px 5px 5px 5px; border-top:groove 3px #ffbf7f; border-bottom:groove 1px #ffbf7f; margin: 5px 0 5px 0 ;">
+				<strong><%= link_to store.store_name, admins_admin_store_path(store[:id]) %></strong>
+				<span style="font-size: 10px;"> <%= store.genre %> / <%= store.area %> <%= store.station %></span>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<% if store.store_images.present? %>
+		    			<%= link_to admins_admin_store_path(store[:id]) do %>
+						    <div class="swiper-container main">
+								<div class="swiper-wrapper">
+									<% store.store_images.each do |image| %>
+									<div class="swiper-slide">
+								 	   <%= attachment_image_tag image, :item_image, :fill, 187, 125 %>
+									</div>
+								  <% end %>
+								</div>
+							</div>
+						<% end %>
+						<% else %>
+						<%= link_to users_store_path(store[:id]) do %>
+				    		<%= image_tag 'no_image.jpg', size: '187x125' %>
+				    	<% end %>
+						<% end %>
+					</div>
+					<div class="col-lg-1">
+					</div>
+					<div class="col-lg-7">
+							<!-- 味評価javascript -->
+						<div id="star1-rate-<%= store.id %>">味　　　</div>
+					          <script>
+					          $('#star1-rate-<%= store.id %>').raty({
+					            size: 36,
+					            starOff:  '<%= asset_path('star-off.png') %>',
+					            starOn : '<%= asset_path('star-on.png') %>',
+					            starHalf: '<%= asset_path('star-half.png') %>',
+					            half: true,
+					            readOnly: true,
+					            score: <%= store.taste %>,
+					          });
+					          </script>
+					          <!-- 見た目評価javascript -->
+						<div id="star2-rate-<%= store.id %>">見た目　</div>
+					          <script>
+					          $('#star2-rate-<%= store.id %>').raty({
+					            size: 36,
+					            starOff:  '<%= asset_path('star-off.png') %>',
+					            starOn : '<%= asset_path('star-on.png') %>',
+					            starHalf: '<%= asset_path('star-half.png') %>',
+					            half: true,
+					            readOnly: true,
+					            score: <%= store.appearance %>,
+					          });
+					          </script>
+					          <!-- 雰囲気評価javascript -->
+					    <div id="star3-rate-<%= store.id %>">雰囲気　</div>
+					          <script>
+					          $('#star3-rate-<%= store.id %>').raty({
+					            size: 36,
+					            starOff:  '<%= asset_path('star-off.png') %>',
+					            starOn : '<%= asset_path('star-on.png') %>',
+					            starHalf: '<%= asset_path('star-half.png') %>',
+					            half: true,
+					            readOnly: true,
+					            score: <%= store.atmosphere %>,
+					          });
+					          </script>
+					    <div>値段　　<span style="font-size: 14px;"><%= store.price %></span></div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+		<% end %>
+		<div class="mx-auto" style="width: 450px; margin-top: 100px;"><%= paginate @stores, class: "paginate" %></div>
+		</div>
+	</div>
+</div>
+
+<!-- 写真表記 -->
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var swiperMain = new Swiper ('.slide .main', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 10,
+  })
+
+</script>

@@ -81,3 +81,8 @@ gem 'paranoia', '~> 2.3', '>= 2.3.1'
 
 gem 'pry-rails'
 
+gem 'http'
+
+gem 'openssl'
+
+gem 'pry-byebug'
