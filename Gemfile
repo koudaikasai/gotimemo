@@ -86,3 +86,5 @@ gem 'http'
 gem 'openssl'
 
 gem 'pry-byebug'
+
+gem 'dotenv-rails'

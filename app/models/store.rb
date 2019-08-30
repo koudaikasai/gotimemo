@@ -47,14 +47,14 @@ class Store < ApplicationRecord
   private
   def geocode
   if store_address.blank?
-    uri = URI.escape("https://maps.googleapis.com/maps/api/geocode/json?address="+self.area.gsub(" ", "")+"&key=AIzaSyBAYMMRcT8tguqip4asNNbAk-txb_O6OJk")
+    uri = URI.escape("https://maps.googleapis.com/maps/api/geocode/json?address="+self.area.gsub(" ", "")+"&key=#{ENV['MAP_KEY']}")
     res = HTTP.get(uri).to_s
     response = JSON.parse(res)
     self.latitude = response["results"][0]["geometry"]["location"]["lat"]
     self.longitude = response["results"][0]["geometry"]["location"]["lng"]
 
   else
-    uri = URI.escape("https://maps.googleapis.com/maps/api/geocode/json?address="+self.store_address.gsub(" ", "")+"&key=AIzaSyBAYMMRcT8tguqip4asNNbAk-txb_O6OJk")
+    uri = URI.escape("https://maps.googleapis.com/maps/api/geocode/json?address="+self.store_address.gsub(" ", "")+"&key=#{ENV['MAP_KEY']}")
     res = HTTP.get(uri).to_s
     response = JSON.parse(res)
     self.latitude = response["results"][0]["geometry"]["location"]["lat"]

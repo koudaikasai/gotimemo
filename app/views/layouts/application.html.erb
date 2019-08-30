@@ -4,6 +4,7 @@
     <title>ごちmemo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag('gotimemo2.png') %>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
@@ -20,7 +21,7 @@
 <!-- タイトルロゴ -->
           <div class="col-lg-3">
             <%= link_to root_path do %>
-            <%= image_tag '/assets/gotimemo.png',size: "200x100"   %>
+            <%= image_tag '/images/gotimemo.png',size: "200x100"   %>
             <% end %>
           </div>
 <!-- ユーザー側の表記 -->
