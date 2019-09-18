@@ -1,24 +1,10 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<サービス名>
+ごちmemo
 
-Things you may want to cover:
+<コンセプト>
+食べ歩きが好きな人、いいお店を探したい人に向けた比較的広い世代、自分に向けたグルメサイトです。
+  
+<作成したきっかけ >
+もともと食べ歩きが好きで評価基準が細分化しているグルメサイトというものがなく、手軽にそういった情報を残しておけるサイトが欲しいと思ったためです。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

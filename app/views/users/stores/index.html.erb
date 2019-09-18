@@ -1,8 +1,18 @@
 <!-- 店舗一覧ページ -->
 <div class="container">
 	<div class="row">
-		<div class="col-lg-4" style="margin-top: 5px; background-color: #ffffe0; height: 320px;　border-radius: 20px;">
-			<h3 style="text-align: center;">店舗検索</h3>
+		<div class="col-lg-4" style="margin-top: 5px; background-color: #ffffe0; height: 100%;　border-radius: 20px;">
+			<h3 style="text-align: center;">ジャンル検索</h3>
+			<%= search_form_for([:users,@search], method: :get) do |f| %>
+			  <P>ジャンル　<%= f.select :genre_eq, Store.genres, {}, class: "select-default" %></P>
+			  <p><%= f.submit '検索する', class: "btn btn-warning btn-block" %></p>
+			<% end %>
+			<h3 style="text-align: center;">エリア検索</h3>
+			<%= search_form_for([:users,@search], method: :get) do |f| %>
+			  <P>エリア　　<%= f.select :area_eq, Store.areas, {}, class: "select-default" %></P>
+			  <p><%= f.submit '検索する', class: "btn btn-warning btn-block" %></p>
+			<% end %>
+			<h3 style="text-align: center;">詳細検索</h3>
 			<%= search_form_for([:users,@search], method: :get) do |f| %>
 			  <P>店舗名　　<%= f.text_field :store_name_cont %></P>
 			  <P>ジャンル　<%= f.select :genre_eq, Store.genres, {}, class: "select-default" %></P>

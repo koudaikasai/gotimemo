@@ -1251,3 +1251,1007 @@ Processing by Users::StoresController#index as HTML
 Completed 200 OK in 601ms (Views: 536.0ms | ActiveRecord: 15.1ms)
 
 
+Started GET "/" for 10.0.2.2 at 2019-09-17 13:26:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 2954ms (Views: 2901.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-17 13:28:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (85.0ms)
+Completed 200 OK in 663ms (Views: 622.6ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2019-09-17 13:28:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DkszGY5w3lgqYHcpg5to+LnqVHBsHrQcBFQkB/OlGJlpHtObnqHLlOV56pF+ON2oGCHTgQ4sqv4BXLPd81Jeug==", "user"=>{"email"=>"koudai2940sura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "koudai2940sura@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 107ms (ActiveRecord: 1.9ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DkszGY5w3lgqYHcpg5to+LnqVHBsHrQcBFQkB/OlGJlpHtObnqHLlOV56pF+ON2oGCHTgQ4sqv4BXLPd81Jeug==", "user"=>{"email"=>"koudai2940sura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 643ms (Views: 547.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2019-09-17 13:29:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/iA7tUtMWkHbJ65btN8iL7P3dM1q0c9u6RTO1CBhl1mZdds3W51PjRQ+M+NJfJd/EjzzPAjj0YzsHFkOIJbReg==", "user"=>{"email"=>"koudai2940sura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "koudai2940sura@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 99ms (ActiveRecord: 1.6ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/iA7tUtMWkHbJ65btN8iL7P3dM1q0c9u6RTO1CBhl1mZdds3W51PjRQ+M+NJfJd/EjzzPAjj0YzsHFkOIJbReg==", "user"=>{"email"=>"koudai2940sura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 652ms (Views: 557.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 10.0.2.2 at 2019-09-17 13:29:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 458ms (Views: 437.0ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/admins/sign_in" for 10.0.2.2 at 2019-09-17 13:29:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"opAHMCkCE8pMdQAOsAw6I9zBrEvNqZBubrboB5xOVu3FxeeyOdMGBoNsnbZNr49zfQoruq+bjoxrvn/dnLkQzg==", "admin"=>{"nickname"=>"はく", "email"=>"koudai2940sura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mAdmin Load (3.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "koudai2940sura@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 7ms (ActiveRecord: 3.3ms)
+
+
+Processing by Admins::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"opAHMCkCE8pMdQAOsAw6I9zBrEvNqZBubrboB5xOVu3FxeeyOdMGBoNsnbZNr49zfQoruq+bjoxrvn/dnLkQzg==", "admin"=>{"nickname"=>"はく", "email"=>"koudai2940sura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 617ms (Views: 517.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in" for 10.0.2.2 at 2019-09-17 13:30:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zfGSPMrUSplA7u4AZr44xu6oOIkuvX+JIYRZ0dAz6WqqpHK+2gVfVY/3c7ibHY2WT2O/eEyPYWskjM4L0MSvSQ==", "admin"=>{"nickname"=>"はく", "email"=>"koudai2940sura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "koudai2940sura@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 4ms (ActiveRecord: 1.4ms)
+
+
+Processing by Admins::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zfGSPMrUSplA7u4AZr44xu6oOIkuvX+JIYRZ0dAz6WqqpHK+2gVfVY/3c7ibHY2WT2O/eEyPYWskjM4L0MSvSQ==", "admin"=>{"nickname"=>"はく", "email"=>"koudai2940sura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 586ms (Views: 489.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2019-09-17 13:30:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 457ms (Views: 456.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-17 16:50:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 565ms (Views: 563.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2019-09-17 16:50:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rqhDSLY1iKp2I0YLd6i+hs74FRbMYmdqjQQivpPhYLjJ/aPKpuSdZrk627OKCwvWbzOS565QeYiIDLVkkxYmmw==", "user"=>{"email"=>"koudai2940sura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "koudai2940sura@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (6.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2019-09-17 16:50:23.657945"], ["sign_in_count", 2], ["updated_at", "2019-09-17 16:50:23.659376"], ["id", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/users/stores
+Completed 302 Found in 249ms (ActiveRecord: 11.6ms)
+
+
+Started GET "/users/stores" for 10.0.2.2 at 2019-09-17 16:50:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.8ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:18
+  [1m[36mStoreImage Load (1.3ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:27
+  [1m[36mStoreImage Load (1.0ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:27
+  Rendered users/stores/index.html.erb within layouts/application (117.6ms)
+Completed 200 OK in 659ms (Views: 591.9ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/users/stores" for 10.0.2.2 at 2019-09-17 16:53:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Users::StoresController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.4ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:18
+  [1m[36mStoreImage Load (1.1ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:27
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:27
+  Rendered users/stores/index.html.erb within layouts/application (1367.9ms)
+Completed 200 OK in 2264ms (Views: 2170.8ms | ActiveRecord: 18.2ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Bstore_name_cont%5D=&q%5Bgenre_eq%5D=1&q%5Barea_eq%5D=0&q%5Bprice_eq%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-17 16:53:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"store_name_cont"=>"", "genre_eq"=>"1", "area_eq"=>"0", "price_eq"=>"1"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.3ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE ("stores"."genre" = 1 AND "stores"."area" = 0 AND "stores"."price" = 1) ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:18
+  Rendered users/stores/index.html.erb within layouts/application (30.2ms)
+Completed 200 OK in 589ms (Views: 554.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Bstore_name_cont%5D=&q%5Bgenre_eq%5D=1&q%5Barea_eq%5D=1&q%5Bprice_eq%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-17 16:54:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"store_name_cont"=>"", "genre_eq"=>"1", "area_eq"=>"1", "price_eq"=>"1"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (2.4ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE ("stores"."genre" = 1 AND "stores"."area" = 1 AND "stores"."price" = 1) ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:18
+  [1m[36mStoreImage Load (1.5ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:27
+  Rendered users/stores/index.html.erb within layouts/application (76.3ms)
+Completed 200 OK in 594ms (Views: 556.0ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-17 16:54:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.0ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:18
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:27
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:27
+  Rendered users/stores/index.html.erb within layouts/application (63.1ms)
+Completed 200 OK in 514ms (Views: 474.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Bstore_name_cont%5D=&q%5Bgenre_eq%5D=1&q%5Barea_eq%5D=0&q%5Bprice_eq%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-17 16:54:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"store_name_cont"=>"", "genre_eq"=>"1", "area_eq"=>"0", "price_eq"=>"1"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.1ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE ("stores"."genre" = 1 AND "stores"."area" = 0 AND "stores"."price" = 1) ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:18
+  Rendered users/stores/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 525ms (Views: 492.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-17 16:54:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.5ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:18
+  [1m[36mStoreImage Load (1.3ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:27
+  [1m[36mStoreImage Load (1.0ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:27
+  Rendered users/stores/index.html.erb within layouts/application (76.1ms)
+Completed 200 OK in 598ms (Views: 558.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-17 16:55:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.5ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:18
+  [1m[36mStoreImage Load (1.5ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:27
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:27
+  Rendered users/stores/index.html.erb within layouts/application (1348.7ms)
+Completed 200 OK in 2180ms (Views: 2089.1ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-17 17:01:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.6ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:18
+  [1m[36mStoreImage Load (1.3ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:27
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:27
+  Rendered users/stores/index.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 508ms (Views: 477.0ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-17 17:01:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.7ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:18
+  [1m[36mStoreImage Load (1.4ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:27
+  [1m[36mStoreImage Load (1.4ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:27
+  Rendered users/stores/index.html.erb within layouts/application (72.5ms)
+Completed 200 OK in 580ms (Views: 544.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-17 17:10:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.1ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:18
+  [1m[36mStoreImage Load (1.4ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:27
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:27
+  Rendered users/stores/index.html.erb within layouts/application (61.5ms)
+Completed 200 OK in 503ms (Views: 471.5ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-17 17:12:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (2.3ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:23
+  [1m[36mStoreImage Load (1.6ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:32
+  [1m[36mStoreImage Load (1.2ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:32
+  Rendered users/stores/index.html.erb within layouts/application (85.4ms)
+Completed 200 OK in 578ms (Views: 541.0ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Bgenre_eq%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-17 17:12:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"genre_eq"=>"1"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.7ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."genre" = 1 ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:23
+  [1m[36mStoreImage Load (1.4ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:32
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:32
+  Rendered users/stores/index.html.erb within layouts/application (69.8ms)
+Completed 200 OK in 514ms (Views: 481.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Bgenre_eq%5D=3&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-17 17:13:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"genre_eq"=>"3"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (2.3ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."genre" = 3 ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:23
+  Rendered users/stores/index.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 550ms (Views: 517.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Bgenre_eq%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-17 17:13:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"genre_eq"=>"1"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (2.1ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."genre" = 1 ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:23
+  [1m[36mStoreImage Load (1.4ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:32
+  [1m[36mStoreImage Load (1.3ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:32
+  Rendered users/stores/index.html.erb within layouts/application (77.4ms)
+Completed 200 OK in 601ms (Views: 562.4ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Bstore_name_cont%5D=&q%5Bgenre_eq%5D=1&q%5Barea_eq%5D=1&q%5Bprice_eq%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-17 17:13:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"store_name_cont"=>"", "genre_eq"=>"1", "area_eq"=>"1", "price_eq"=>"1"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (2.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE ("stores"."genre" = 1 AND "stores"."area" = 1 AND "stores"."price" = 1) ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:23
+  [1m[36mStoreImage Load (1.2ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:32
+  Rendered users/stores/index.html.erb within layouts/application (67.8ms)
+Completed 200 OK in 604ms (Views: 567.5ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Bgenre_eq%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-17 17:13:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"genre_eq"=>"1"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.6ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."genre" = 1 ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:23
+  [1m[36mStoreImage Load (1.0ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:32
+  [1m[36mStoreImage Load (0.8ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:32
+  Rendered users/stores/index.html.erb within layouts/application (64.2ms)
+Completed 200 OK in 495ms (Views: 464.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-17 17:13:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.1ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:23
+  [1m[36mStoreImage Load (1.6ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:32
+  [1m[36mStoreImage Load (1.0ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:32
+  Rendered users/stores/index.html.erb within layouts/application (67.0ms)
+Completed 200 OK in 526ms (Views: 494.2ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-17 17:13:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (2.0ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:23
+  [1m[36mStoreImage Load (1.2ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:32
+  [1m[36mStoreImage Load (1.3ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:32
+  Rendered users/stores/index.html.erb within layouts/application (72.4ms)
+Completed 200 OK in 614ms (Views: 580.0ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-17 17:13:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (2.0ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:23
+  [1m[36mStoreImage Load (1.0ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:32
+  [1m[36mStoreImage Load (1.1ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:32
+  Rendered users/stores/index.html.erb within layouts/application (77.1ms)
+Completed 200 OK in 569ms (Views: 530.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-18 05:46:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (2.0ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  [1m[36mStoreImage Load (1.8ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.1ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:37
+  Rendered users/stores/index.html.erb within layouts/application (74.6ms)
+Completed 200 OK in 568ms (Views: 533.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-18 05:49:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.6ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  [1m[36mStoreImage Load (1.3ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (0.8ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:37
+  Rendered users/stores/index.html.erb within layouts/application (65.8ms)
+Completed 200 OK in 501ms (Views: 469.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-18 05:52:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.8ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  [1m[36mStoreImage Load (1.6ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:37
+  Rendered users/stores/index.html.erb within layouts/application (72.8ms)
+Completed 200 OK in 572ms (Views: 537.8ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Barea_eq%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-18 06:16:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"area_eq"=>"1"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.8ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."area" = 1 ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  [1m[36mStoreImage Load (1.4ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:37
+  Rendered users/stores/index.html.erb within layouts/application (61.8ms)
+Completed 200 OK in 489ms (Views: 458.2ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-18 06:16:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (2.1ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  [1m[36mStoreImage Load (1.2ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.1ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:37
+  Rendered users/stores/index.html.erb within layouts/application (73.4ms)
+Completed 200 OK in 573ms (Views: 535.8ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/users/stores/new" for 10.0.2.2 at 2019-09-18 06:17:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/new.html.erb within layouts/application
+  Rendered users/stores/new.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 590ms (Views: 494.8ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/users/stores" for 10.0.2.2 at 2019-09-18 06:18:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/zQqglxHM47i+5mIDLuh6AHmB0Am362p3KfumuW/Sr9lf2utpCeFYbtjhE0r06M+5PGnzgvNIKm2vPwECOW75Q==", "store"=>{"store_name"=>";", "genre"=>"和食", "price"=>"～￥999円", "waittime"=>"15分未満", "taste"=>"2.5", "appearance"=>"3", "atmosphere"=>"3", "release"=>"公開", "area"=>"北海道", "station"=>"", "people_number"=>"1人", "store_address"=>"", "impression"=>""}, "commit"=>"お店登録"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/stores_controller.rb:32
+  [1m[36mStore Create (14.6ms)[0m  [1m[32mINSERT INTO "stores" ("store_name", "user_id", "genre", "waittime", "release", "area", "price", "station", "people_number", "store_address", "impression", "taste", "appearance", "atmosphere", "latitude", "longitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["store_name", ";"], ["user_id", 1], ["genre", 1], ["waittime", 1], ["release", 1], ["area", 1], ["price", 1], ["station", ""], ["people_number", 1], ["store_address", ""], ["impression", ""], ["taste", 2.5], ["appearance", 3.0], ["atmosphere", 3.0], ["latitude", 43.2203266], ["longitude", 142.8634737], ["created_at", "2019-09-18 06:18:00.618228"], ["updated_at", "2019-09-18 06:18:00.618228"]]
+  ↳ app/controllers/users/stores_controller.rb:32
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/stores_controller.rb:32
+Redirected to http://localhost:3000/users/stores/3
+Completed 302 Found in 220ms (ActiveRecord: 18.7ms)
+
+
+Started GET "/users/stores/3" for 10.0.2.2 at 2019-09-18 06:18:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStore Load (1.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users/stores_controller.rb:20
+  Rendering users/stores/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."store_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["store_id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/store.rb:36
+  [1m[36mStoreImage Load (1.1ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 3]]
+  ↳ app/views/users/stores/show.html.erb:34
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/stores/show.html.erb:157
+  Rendered users/stores/show.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 575ms (Views: 539.7ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/users/stores" for 10.0.2.2 at 2019-09-18 06:18:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/zQqglxHM47i+5mIDLuh6AHmB0Am362p3KfumuW/Sr9lf2utpCeFYbtjhE0r06M+5PGnzgvNIKm2vPwECOW75Q==", "store"=>{"store_name"=>";", "genre"=>"和食", "price"=>"～￥999円", "waittime"=>"15分未満", "taste"=>"4.5", "appearance"=>"5", "atmosphere"=>"5", "release"=>"公開", "area"=>"北海道", "station"=>"", "people_number"=>"1人", "store_address"=>"", "impression"=>""}, "commit"=>"お店登録"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/stores_controller.rb:32
+  [1m[36mStore Create (6.9ms)[0m  [1m[32mINSERT INTO "stores" ("store_name", "user_id", "genre", "waittime", "release", "area", "price", "station", "people_number", "store_address", "impression", "taste", "appearance", "atmosphere", "latitude", "longitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["store_name", ";"], ["user_id", 1], ["genre", 1], ["waittime", 1], ["release", 1], ["area", 1], ["price", 1], ["station", ""], ["people_number", 1], ["store_address", ""], ["impression", ""], ["taste", 4.5], ["appearance", 5.0], ["atmosphere", 5.0], ["latitude", 43.2203266], ["longitude", 142.8634737], ["created_at", "2019-09-18 06:18:07.867089"], ["updated_at", "2019-09-18 06:18:07.867089"]]
+  ↳ app/controllers/users/stores_controller.rb:32
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/stores_controller.rb:32
+Redirected to http://localhost:3000/users/stores/4
+Completed 302 Found in 259ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/users/stores/4" for 10.0.2.2 at 2019-09-18 06:18:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStore Load (0.9ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users/stores_controller.rb:20
+  Rendering users/stores/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."store_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["store_id", 4], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/store.rb:36
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 4]]
+  ↳ app/views/users/stores/show.html.erb:34
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/stores/show.html.erb:157
+  Rendered users/stores/show.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 473ms (Views: 443.9ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/users/stores" for 10.0.2.2 at 2019-09-18 06:18:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/zQqglxHM47i+5mIDLuh6AHmB0Am362p3KfumuW/Sr9lf2utpCeFYbtjhE0r06M+5PGnzgvNIKm2vPwECOW75Q==", "store"=>{"store_name"=>";ll", "genre"=>"和食", "price"=>"～￥999円", "waittime"=>"15分未満", "taste"=>"3", "appearance"=>"2.5", "atmosphere"=>"3", "release"=>"公開", "area"=>"北海道", "station"=>"", "people_number"=>"1人", "store_address"=>"", "impression"=>""}, "commit"=>"お店登録"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/stores_controller.rb:32
+  [1m[36mStore Create (19.8ms)[0m  [1m[32mINSERT INTO "stores" ("store_name", "user_id", "genre", "waittime", "release", "area", "price", "station", "people_number", "store_address", "impression", "taste", "appearance", "atmosphere", "latitude", "longitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["store_name", ";ll"], ["user_id", 1], ["genre", 1], ["waittime", 1], ["release", 1], ["area", 1], ["price", 1], ["station", ""], ["people_number", 1], ["store_address", ""], ["impression", ""], ["taste", 3.0], ["appearance", 2.5], ["atmosphere", 3.0], ["latitude", 43.2203266], ["longitude", 142.8634737], ["created_at", "2019-09-18 06:18:18.341327"], ["updated_at", "2019-09-18 06:18:18.341327"]]
+  ↳ app/controllers/users/stores_controller.rb:32
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/stores_controller.rb:32
+Redirected to http://localhost:3000/users/stores/5
+Completed 302 Found in 199ms (ActiveRecord: 30.7ms)
+
+
+Started GET "/users/stores/5" for 10.0.2.2 at 2019-09-18 06:18:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStore Load (0.8ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users/stores_controller.rb:20
+  Rendering users/stores/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."store_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["store_id", 5], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/store.rb:36
+  [1m[36mStoreImage Load (1.6ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 5]]
+  ↳ app/views/users/stores/show.html.erb:34
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/stores/show.html.erb:157
+  Rendered users/stores/show.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 491ms (Views: 462.4ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/users/stores" for 10.0.2.2 at 2019-09-18 06:18:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/zQqglxHM47i+5mIDLuh6AHmB0Am362p3KfumuW/Sr9lf2utpCeFYbtjhE0r06M+5PGnzgvNIKm2vPwECOW75Q==", "store"=>{"store_name"=>";ll", "genre"=>"和食", "price"=>"～￥999円", "waittime"=>"15分未満", "taste"=>"2", "appearance"=>"1.5", "atmosphere"=>"1.5", "release"=>"公開", "area"=>"北海道", "station"=>"", "people_number"=>"1人", "store_address"=>"", "impression"=>""}, "commit"=>"お店登録"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/stores_controller.rb:32
+  [1m[36mStore Create (10.3ms)[0m  [1m[32mINSERT INTO "stores" ("store_name", "user_id", "genre", "waittime", "release", "area", "price", "station", "people_number", "store_address", "impression", "taste", "appearance", "atmosphere", "latitude", "longitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["store_name", ";ll"], ["user_id", 1], ["genre", 1], ["waittime", 1], ["release", 1], ["area", 1], ["price", 1], ["station", ""], ["people_number", 1], ["store_address", ""], ["impression", ""], ["taste", 2.0], ["appearance", 1.5], ["atmosphere", 1.5], ["latitude", 43.2203266], ["longitude", 142.8634737], ["created_at", "2019-09-18 06:18:24.369745"], ["updated_at", "2019-09-18 06:18:24.369745"]]
+  ↳ app/controllers/users/stores_controller.rb:32
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/stores_controller.rb:32
+Redirected to http://localhost:3000/users/stores/6
+Completed 302 Found in 210ms (ActiveRecord: 15.2ms)
+
+
+Started GET "/users/stores/6" for 10.0.2.2 at 2019-09-18 06:18:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStore Load (1.1ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users/stores_controller.rb:20
+  Rendering users/stores/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."store_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["store_id", 6], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/store.rb:36
+  [1m[36mStoreImage Load (1.4ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 6]]
+  ↳ app/views/users/stores/show.html.erb:34
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/stores/show.html.erb:157
+  Rendered users/stores/show.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 552ms (Views: 518.3ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/users/stores" for 10.0.2.2 at 2019-09-18 06:18:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.9ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  [1m[36mStoreImage Load (1.5ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 6]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.3ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 5]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 4]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.6ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 3]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.1ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.2ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:37
+  Rendered users/stores/index.html.erb within layouts/application (96.7ms)
+Completed 200 OK in 603ms (Views: 563.4ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-18 06:18:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.0ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  [1m[36mStoreImage Load (1.2ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 6]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 5]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 4]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.3ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 3]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.1ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:37
+  Rendered users/stores/index.html.erb within layouts/application (82.1ms)
+Completed 200 OK in 519ms (Views: 484.4ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/users/stores/5" for 10.0.2.2 at 2019-09-18 06:18:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStore Load (1.0ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users/stores_controller.rb:20
+  Rendering users/stores/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."store_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["store_id", 5], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/store.rb:36
+  [1m[36mStoreImage Load (1.2ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 5]]
+  ↳ app/views/users/stores/show.html.erb:34
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/stores/show.html.erb:157
+  Rendered users/stores/show.html.erb within layouts/application (39.6ms)
+Completed 200 OK in 475ms (Views: 444.0ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/users/stores/5/edit" for 10.0.2.2 at 2019-09-18 06:18:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStore Load (1.3ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users/stores_controller.rb:70
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/stores_controller.rb:71
+  [1m[36mCACHE Store Load (0.0ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users/stores_controller.rb:42
+  Rendering users/stores/edit.html.erb within layouts/application
+  [1m[36mStoreImage Load (1.1ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 5]]
+  ↳ /home/vagrant/.bundle/ruby/2.5.0/refile-e690bf5c2d83/lib/refile/attachment/multiple_attachments.rb:16
+  Rendered users/stores/edit.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 588ms (Views: 545.8ms | ActiveRecord: 5.2ms)
+
+
+Started PATCH "/users/stores/5" for 10.0.2.2 at 2019-09-18 06:19:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PLbWa15IMMWV7BCbanWHVzGUaYdKdYdh2E9nG9Na3DGm/ZdEpiiGKsx0DV5NHYWB1IPJCWdnCmGyVHWFPgAtaw==", "store"=>{"store_name"=>";ll", "genre"=>"カレー", "price"=>"～￥999円", "waittime"=>"15分未満", "taste"=>"3.5", "appearance"=>"4", "atmosphere"=>"3.5", "release"=>"公開", "area"=>"北海道", "station"=>"", "people_number"=>"1人", "store_address"=>"", "impression"=>""}, "commit"=>"編集完了", "id"=>"5"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStore Load (1.3ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users/stores_controller.rb:70
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/stores_controller.rb:71
+  [1m[36mCACHE Store Load (0.0ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users/stores_controller.rb:47
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/stores_controller.rb:49
+  [1m[36mStore Update (10.0ms)[0m  [1m[33mUPDATE "stores" SET "genre" = ?, "taste" = ?, "appearance" = ?, "atmosphere" = ?, "updated_at" = ? WHERE "stores"."id" = ?[0m  [["genre", 6], ["taste", 3.5], ["appearance", 4.0], ["atmosphere", 3.5], ["updated_at", "2019-09-18 06:19:00.511989"], ["id", 5]]
+  ↳ app/controllers/users/stores_controller.rb:49
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/stores_controller.rb:49
+Redirected to http://localhost:3000/users/stores/5
+Completed 302 Found in 186ms (ActiveRecord: 17.7ms)
+
+
+Started GET "/users/stores/5" for 10.0.2.2 at 2019-09-18 06:19:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStore Load (1.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users/stores_controller.rb:20
+  Rendering users/stores/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."store_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["store_id", 5], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/store.rb:36
+  [1m[36mStoreImage Load (1.6ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 5]]
+  ↳ app/views/users/stores/show.html.erb:34
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/stores/show.html.erb:157
+  Rendered users/stores/show.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 533ms (Views: 498.9ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/users/stores" for 10.0.2.2 at 2019-09-18 06:19:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.6ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  [1m[36mStoreImage Load (1.2ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 6]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (0.8ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 5]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.2ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 4]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 3]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:37
+  Rendered users/stores/index.html.erb within layouts/application (79.1ms)
+Completed 200 OK in 519ms (Views: 484.6ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Barea_eq%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-18 06:19:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"area_eq"=>"1"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.6ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."area" = 1 ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  [1m[36mStoreImage Load (1.2ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 6]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 5]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.0ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 4]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 3]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.0ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:37
+  Rendered users/stores/index.html.erb within layouts/application (79.0ms)
+Completed 200 OK in 522ms (Views: 489.2ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Barea_eq%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-18 06:19:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"area_eq"=>"1"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (2.0ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."area" = 1 ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  [1m[36mStoreImage Load (1.2ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 6]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 5]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.5ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 4]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.7ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 3]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.4ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:37
+  Rendered users/stores/index.html.erb within layouts/application (86.3ms)
+Completed 200 OK in 576ms (Views: 536.6ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Bstore_name_cont%5D=&q%5Bgenre_eq%5D=1&q%5Barea_eq%5D=1&q%5Bprice_eq%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-18 06:19:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"store_name_cont"=>"", "genre_eq"=>"1", "area_eq"=>"1", "price_eq"=>"1"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE ("stores"."genre" = 1 AND "stores"."area" = 1 AND "stores"."price" = 1) ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  [1m[36mStoreImage Load (2.0ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 6]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.0ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 4]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.5ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 3]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.1ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:37
+  Rendered users/stores/index.html.erb within layouts/application (80.6ms)
+Completed 200 OK in 627ms (Views: 580.6ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-18 06:19:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (2.0ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  [1m[36mStoreImage Load (1.6ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 6]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.3ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 5]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.1ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 4]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.6ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 3]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.8ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.4ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:37
+  Rendered users/stores/index.html.erb within layouts/application (92.6ms)
+Completed 200 OK in 594ms (Views: 554.4ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Bgenre_eq%5D=13&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-18 06:19:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"genre_eq"=>"13"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.4ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."genre" = 13 ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  Rendered users/stores/index.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 506ms (Views: 472.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Bgenre_eq%5D=13&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-18 06:19:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"genre_eq"=>"13"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.6ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."genre" = 13 ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  Rendered users/stores/index.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 491ms (Views: 458.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&q%5Barea_eq%5D=1&commit=%E6%A4%9C%E7%B4%A2%E3%81%99%E3%82%8B" for 10.0.2.2 at 2019-09-18 06:19:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"area_eq"=>"1"}, "commit"=>"検索する"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.7ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."area" = 1 ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  [1m[36mStoreImage Load (1.3ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 6]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (0.9ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 5]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.3ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 4]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.4ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 3]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.1ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:37
+  Rendered users/stores/index.html.erb within layouts/application (86.9ms)
+Completed 200 OK in 625ms (Views: 585.8ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/users/stores?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88" for 10.0.2.2 at 2019-09-18 06:19:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::StoresController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"検索リセット"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/stores/index.html.erb within layouts/application
+  [1m[36mStore Load (1.9ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/users/stores/index.html.erb:28
+  [1m[36mStoreImage Load (1.3ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 6]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.0ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 5]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.8ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 4]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.3ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 3]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.3ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 2]]
+  ↳ app/views/users/stores/index.html.erb:37
+  [1m[36mStoreImage Load (1.6ms)[0m  [1m[34mSELECT "store_images".* FROM "store_images" WHERE "store_images"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/views/users/stores/index.html.erb:37
+  Rendered users/stores/index.html.erb within layouts/application (95.2ms)
+Completed 200 OK in 589ms (Views: 548.2ms | ActiveRecord: 11.5ms)
+
+
