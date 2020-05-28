@@ -67,7 +67,7 @@ gem "refile", require: "refile/rails", github: 'refile/refile'
 
 gem "refile-mini_magick", github: 'refile/refile-mini_magick'
 
-gem 'kaminari','~> 1.1.1'
+gem 'kaminari','~> 1.2.1'
 
 gem 'bootstrap', '~> 4.1.1'
 
